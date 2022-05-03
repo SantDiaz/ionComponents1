@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Instagram</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row  *ngFor="let feed of feeds" >
+      <ion-col size="12">
+        <ion-item lines="full">
+      
+          <ion-avatar slot="start">
+            <ion-img [src]="feed?.logo"></ion-img>
+          </ion-avatar> 
+          <ion-label>
+            <!-- <strong>Santiago Diaz</strong> -->
+            <strong>{{feed?.username}}</strong>
+            <p>
+              <!-- <ion-text>Hola</ion-text> -->
+              <ion-text>{{feed?.location}}</ion-text>
+            </p>
+          </ion-label>
+          <!-- pruebas img -->
+          <!-- <div *ngIf="feed?.image" class="post" [style.background-image]="'url(' + feed?.src + ')'"></div> -->
+        
+        
+        </ion-item>
+      </ion-col>
+
+
+      <!-- CORREGIR -->
+      <ion-img  class="post" src="assets/imgs/posts/2.jpg"  ></ion-img> 
+      <!-- CORREGIR -->
+
+
+       <!-- SECCION DE BOTONES -->
+  <ion-item lines="none">
+    <!-- icono de corazon -->
+      <ion-button   class="iconsStart"  slot="start" fill="clear ">
+        <ion-icon  slot="icon-only" name="heart-outline" color="dark"></ion-icon>
+      </ion-button>
+
+      <!-- <ion-button (click)="handleLike()">{{LikeValue}}</ion-button> -->
+      <!-- <ion-button (click)="handleDislike()">{{DislikeValue}}</ion-button> -->
+
+    <!-- icono de comentario -->
+      <ion-button class="iconsStart" slot="start" fill="clear">
+        <ion-icon slot="icon-only" name="chatbubble-outline" color="dark"></ion-icon>
+      </ion-button>
+
+      <!-- icono de enviar -->
+      <ion-button class="iconsStart" slot="start" fill="clear">
+        <ion-icon slot="icon-only" name="paper-plane-outline" color="dark"></ion-icon>
+      </ion-button>
+     </ion-item>   
+
+     
+         <!-- LIKES --> 
+         <ion-item  class="ion-padding">
+          <strong   name="likes" color="dark"> Likes</strong>
+       </ion-item>
+       
+      <!-- <ion-content>
+        <ion-label position="end">Comentarios</ion-label>
+        <ion-textarea  ></ion-textarea>
+      </ion-content> -->
+       
+
+    </ion-row>
+  </ion-grid>
+
+
+
+  <!-- A VER -->
+  <!-- <div> -->
+  <!-- <ion-img  class="post" src="assets/imgs/posts/2.jpg"  ></ion-img>  -->
+  <!-- <div *ngIf="feed?.image" class="post" [style.background-image]="'url(' + feed?.src + ')'"></div> -->
+<!-- </div>  -->
+  
+  
+
+ 
+
+    <!-- Comentarios -->
+
+
+
+
+
+  
+
+
+
+</ion-content>
+
