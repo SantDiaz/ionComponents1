@@ -25,28 +25,23 @@
               <ion-text>{{feed?.location}}</ion-text>
             </p>
           </ion-label>
-          <!-- pruebas img -->
-          <!-- <div *ngIf="feed?.image" class="post" [style.background-image]="'url(' + feed?.src + ')'"></div> -->
-        
+         
         
         </ion-item>
       </ion-col>
+      <ion-img *ngIf="feed?.image"  class="post" src="{{feed?.src}} "  ></ion-img> 
+     
 
-
-      <!-- CORREGIR -->
-      <ion-img  class="post" src="assets/imgs/posts/2.jpg"  ></ion-img> 
-      <!-- CORREGIR -->
 
 
        <!-- SECCION DE BOTONES -->
   <ion-item lines="none">
     <!-- icono de corazon -->
-      <ion-button   class="iconsStart"  slot="start" fill="clear ">
-        <ion-icon  slot="icon-only" name="heart-outline" color="dark"></ion-icon>
-      </ion-button>
-
-      <!-- <ion-button (click)="handleLike()">{{LikeValue}}</ion-button> -->
-      <!-- <ion-button (click)="handleDislike()">{{DislikeValue}}</ion-button> -->
+    <ion-button  *ngIf="likear" class="iconsStart"  slot="start" fill="clear ">
+      <ion-icon (click)="like()" slot="icon-only" name="heart-outline" color="dark"></ion-icon>
+    </ion-button>
+   
+  
 
     <!-- icono de comentario -->
       <ion-button class="iconsStart" slot="start" fill="clear">
@@ -59,42 +54,27 @@
       </ion-button>
      </ion-item>   
 
-     
+     <ion-item-sliding  position="float " class="ion-padding">
+      <strong    name="likes" color="dark">{{feed?.likes}} Likes</strong>
+     </ion-item-sliding>
+
+
+     <ion-text  color="ion-padding">
+      <strong>{{feed?.username}}</strong> {{feed?.description}}
+    </ion-text>
+
+
+
+       <!-- <ion-button (click)="handleLike()">{{LikeValue}}</ion-button> -->
+      <!-- <ion-button (click)="handleDislike()">{{DislikeValue}}</ion-button> -->
          <!-- LIKES --> 
-         <ion-item  class="ion-padding">
-          <strong   name="likes" color="dark"> Likes</strong>
-       </ion-item>
-       
-      <!-- <ion-content>
-        <ion-label position="end">Comentarios</ion-label>
-        <ion-textarea  ></ion-textarea>
-      </ion-content> -->
-       
+ 
+         <ion-item>
+          <ion-label position="float">Comentarios</ion-label>
+          <ion-input (click)="mostrarComentarios()"></ion-input>
+        </ion-item>
 
     </ion-row>
   </ion-grid>
-
-
-
-  <!-- A VER -->
-  <!-- <div> -->
-  <!-- <ion-img  class="post" src="assets/imgs/posts/2.jpg"  ></ion-img>  -->
-  <!-- <div *ngIf="feed?.image" class="post" [style.background-image]="'url(' + feed?.src + ')'"></div> -->
-<!-- </div>  -->
-  
-  
-
- 
-
-    <!-- Comentarios -->
-
-
-
-
-
-  
-
-
-
 </ion-content>
 
