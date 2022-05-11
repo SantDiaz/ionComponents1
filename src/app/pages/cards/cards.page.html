@@ -35,11 +35,19 @@
 
 
        <!-- SECCION DE BOTONES -->
-  <ion-item lines="none">
+  <ion-item *ngFor="let item of feeds" lines="none">
     <!-- icono de corazon -->
-    <ion-button  *ngIf="likear" class="iconsStart"  slot="start" fill="clear ">
+    <ion-row >
+      <ion-icon  [class.like]="item?.like"
+      (click)="likeComment(item)"
+      [color]="item?.like ? 'danger' : 'medium'" 
+      [name]="item?.like ? 'heart' : 'heart-outline'">
+              </ion-icon>
+    </ion-row> 
+    
+    <!-- <ion-button  *ngIf="likear" class="iconsStart"  slot="start" fill="clear ">
       <ion-icon (click)="like()" slot="icon-only" name="heart-outline" color="dark"></ion-icon>
-    </ion-button>
+    </ion-button> -->
    
   
 
@@ -71,7 +79,7 @@
  
          <ion-item>
           <ion-label position="float">Comentarios</ion-label>
-          <ion-input (click)="mostrarComentarios()"></ion-input>
+          <!-- <ion-input (click)="mostrarComentarios()"></ion-input> -->
         </ion-item>
 
     </ion-row>

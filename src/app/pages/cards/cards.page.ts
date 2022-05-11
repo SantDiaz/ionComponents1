@@ -1,4 +1,4 @@
-import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 // usar ViewChild para acceder a una directiva, componente secundario
 // y a un elemento DOM desde una clase principal de componentes
@@ -61,25 +61,21 @@ export class CardsPage implements OnInit {
   ];
 
    public press: number =0;
+   
 
   constructor() {  
   }
-  ngOnInit() {
-    this.likear=true;
+  
+  likeComment(item) {
+    item.like = !item?.like;
   }
 
-
-  mostrarComentarios(){}
-
-
-   like(){
-    this.likear==true;
-    
-   }
+  ngOnInit() {
+  }
 
   
-
   
+ 
 
 
 }
