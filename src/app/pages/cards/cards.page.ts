@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FileDetector } from 'protractor';
 
-// usar ViewChild para acceder a una directiva, componente secundario
-// y a un elemento DOM desde una clase principal de componentes
+
 
 @Component({
   selector: 'app-cards',
@@ -13,6 +13,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class CardsPage implements OnInit {
 
 
+  likeValor : number;
+  dislikeValor : number; 
+  // LikeValue: number;
+  // DislikeValue: number;
 
   feeds: any[] = [
     {
@@ -42,7 +46,7 @@ export class CardsPage implements OnInit {
       location: 'Miami', 
       src: 'assets/imgs/posts/4.jpg',
       description: "Lolapaasda",
-      like: 4,
+      like: 400,
       image: true
 
     },
@@ -60,20 +64,36 @@ export class CardsPage implements OnInit {
  
   ];
 
-  
+
 
   constructor() {  
+    this.likeValor = 0;
+    // this.LikeValue = 0;
+    // this.DislikeValue = 0;
   }
   
   likeComment(feed) {
     feed.like = !feed?.like;
+    
   }
+
+  ContadorLikes(){
+    this.likeValor++;
+    this.dislikeValor--;
+   }
+  
+// handleLike(){
+//   this.LikeValue++;
+
+//  }
+//  handleDislike(){
+//   this.DislikeValue--;
+//  }
 
   ngOnInit() {
   }
 
-  
-  
+
  
 
 
