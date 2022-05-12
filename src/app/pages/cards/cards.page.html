@@ -35,20 +35,17 @@
 
 
        <!-- SECCION DE BOTONES -->
-  <ion-item *ngFor="let item of feeds" lines="none">
+  <ion-item  lines="none">
     <!-- icono de corazon -->
     <ion-row >
-      <ion-icon  [class.like]="item?.like"
-      (click)="likeComment(item)"
-      [color]="item?.like ? 'danger' : 'medium'" 
-      [name]="item?.like ? 'heart' : 'heart-outline'">
+      <ion-icon  [class.like]="feed?.like"
+      (click)="likeComment(feed)"
+      [color]="feed?.like ? 'danger' : 'medium'" 
+      [name]="feed?.like ? 'heart' : 'heart-outline'">
               </ion-icon>
     </ion-row> 
     
-    <!-- <ion-button  *ngIf="likear" class="iconsStart"  slot="start" fill="clear ">
-      <ion-icon (click)="like()" slot="icon-only" name="heart-outline" color="dark"></ion-icon>
-    </ion-button> -->
-   
+
   
 
     <!-- icono de comentario -->
@@ -63,7 +60,7 @@
      </ion-item>   
 
      <ion-item-sliding  position="float " class="ion-padding">
-      <strong    name="likes" color="dark">{{feed?.likes}} Likes</strong>
+      <strong    name="likes" color="dark">{{feed?.like}} Likes</strong>
      </ion-item-sliding>
 
 
@@ -73,8 +70,7 @@
 
 
 
-       <!-- <ion-button (click)="handleLike()">{{LikeValue}}</ion-button> -->
-      <!-- <ion-button (click)="handleDislike()">{{DislikeValue}}</ion-button> -->
+
          <!-- LIKES --> 
  
          <ion-item>
